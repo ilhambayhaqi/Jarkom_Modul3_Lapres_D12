@@ -102,30 +102,48 @@ Pertama pada UML **Mojokerto** dilakukan instalasi squid sebagai proxy servernya
 
 Untuk membuat password digunakan command ```htpasswd -c /etc/squid/passwd userta_d12``` kemudian mengisi password dengan ```inipassw0rdta_d12``` sehingga nantinya akan terbentuk file untuk menyimpan auth user dan password yang telah dienkripsi pada ```/etc/squid/passwd```
 
+![image](https://user-images.githubusercontent.com/57692117/100543123-e8ed4a80-3280-11eb-9baf-0bf52cae7615.png)
+
+![image](https://user-images.githubusercontent.com/57692117/100543146-01f5fb80-3281-11eb-8d34-aed582867785.png)
+
 Agar aman, maka sebelum melakukan konfigurasi pada squid dilakukan backup terlebih dahulu dengan melakukan copy file ```/etc/squid/squid.conf```.
 
 Untuk melakukan apply file auth yang telah dibuat maka dilakukan konfigurasi sebagai berikut.
 
+![image](https://user-images.githubusercontent.com/57692117/100543197-4e413b80-3281-11eb-9170-332b4e410965.png)
+
 Perlu diingat, pada konfigurasi ```http_access``` akan mengambil argument dalam line yang sama sebagai logika ```and``` dan argumen yang berbeda line dengan logika ```or``` . Karena nantinya pada soal 8 dan 9 diminta untuk menggabungkan dengan waktu akses yang diperbolehkan maka untuk http_accessnya digabung agar konfigurasinya tidak bertabrakan sebagai berikut.
+
+![image](https://user-images.githubusercontent.com/57692117/100543231-7a5cbc80-3281-11eb-848d-3d6fbbbf442e.png)
 
 ## Soal 8
 Pada awalnya proxy dibuat agar tidak dapat diakses diluar jam yang ditentukan. Pada soal ini meminta untuk membatasi akses proxy agar dapat digunakan pada hari **Selasa-Rabu pukul 13.00-18.00**.
 
 Konfigurasi untuk waktu yang ditentukan terdapat pada file ```/etc/squid/acl.conf```. Untuk variabel waktu yang digunakan adalah ```KERJA_TA``` sebagai berikut.
 
+![image](https://user-images.githubusercontent.com/57692117/100543275-c3ad0c00-3281-11eb-9b0f-7ab034213557.png)
+
 Perlu diingat, pada konfigurasi ```http_access``` akan mengambil argument dalam line yang sama sebagai logika ```and``` dan argumen yang berbeda line dengan logika ```or``` . Karena pada soal 7 diminta untuk menggabungkan dengan login user maka untuk http_accessnya digabung agar konfigurasinya tidak bertabrakan sebagai berikut.
+
+![image](https://user-images.githubusercontent.com/57692117/100543231-7a5cbc80-3281-11eb-848d-3d6fbbbf442e.png)
 
 ## Soal 9
 Pada awalnya proxy dibuat agar tidak dapat diakses diluar jam yang ditentukan. Pada soal ini meminta untuk membatasi akses proxy agar dapat digunakan pada hari **Selasa-Kamis pukul 21.00-09.00**.
 
 Konfigurasi untuk waktu yang ditentukan terdapat pada file ```/etc/squid/acl.conf```. Untuk variabel waktu yang digunakan adalah ```BIMBINGAN_MALAM``` dan ```BIMBINGAN_PAGI``` karena penentuan waktu hanya bisa dalam satu hari sehingga konfigurasinya sebagai berikut.
 
+![image](https://user-images.githubusercontent.com/57692117/100543275-c3ad0c00-3281-11eb-9b0f-7ab034213557.png)
+
 Perlu diingat, pada konfigurasi ```http_access``` akan mengambil argument dalam line yang sama sebagai logika ```and``` dan argumen yang berbeda line dengan logika ```or``` . Karena pada soal 7 diminta untuk menggabungkan dengan login user maka untuk http_accessnya digabung agar konfigurasinya tidak bertabrakan sebagai berikut.
+
+![image](https://user-images.githubusercontent.com/57692117/100543231-7a5cbc80-3281-11eb-848d-3d6fbbbf442e.png)
 
 ## Soal 10
 Ketika user mencoba untuk mengakses **google.com** maka akan dialihkan menuju **monta.if.its.ac.id**
 
 Untuk melakukan redirect cukup dilakukan dengan membuat access deny pada url yang dituju kemudian diset ```deny_info``` menuju url yang akan dijadikan tempat pengalihannya. Untuk konfigurasi pada file ```/etc/squid/squid.conf``` sebagai berikut.
+
+![image](https://user-images.githubusercontent.com/57692117/100543317-f820c800-3281-11eb-9d03-505b103dd3bb.png)
 
 ## Soal 11
 Mengganti error page default pada squid dengan error page yang telah disediakan.
@@ -135,12 +153,17 @@ Melakukan konfigurasi agar proxy server dapat diakses dengan menggunakan domain 
 
 Untuk menyelesaikan soal ini maka pertama dilakukan instalasi DNS Server dengan Bind9 menggunakan command ```apt-get install bind9 -y```
 
-Kemudian dilakukan konfigurasi zone pada file ```/etc/binid/named.conf.local``` sebagai berikut.
+Kemudian dilakukan konfigurasi zone pada file ```/etc/bind/named.conf.local``` sebagai berikut.
+
+![image](https://user-images.githubusercontent.com/57692117/100543336-20a8c200-3282-11eb-970a-a5541ff69e19.png)
 
 Kemudian untuk melakukan setting domain beserta subdomainnya dilakukan pada file ```/etc/bind/jarkom/janganlupa-ta.d12.pw``` sebagai berikut.
 
+![image](https://user-images.githubusercontent.com/57692117/100543360-3fa75400-3282-11eb-993b-a0dc79664b65.png)
 
+Agar dapat dilakukan testing dengan browser maka pada konfigurasi Open VPN ditambahkan option DNS **Malang** sebagai berikut.
 
+![image](https://user-images.githubusercontent.com/57692117/100542977-0837a800-3280-11eb-9556-f1efd902dabd.png)
 
 
 
