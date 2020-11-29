@@ -148,6 +148,10 @@ Untuk melakukan redirect cukup dilakukan dengan membuat access deny pada url yan
 ## Soal 11
 Mengganti error page default pada squid dengan error page yang telah disediakan.
 
+Untuk mengganti error page dilakukan penggantian pada file ```ERR_ACCESS_DENIED``` pada direktori ```/usr/share/squid/errors/en``` sehingga filenya menjadi seperti ini.
+
+![image](https://user-images.githubusercontent.com/57692117/100543577-821d6080-3283-11eb-8222-f7957552b6e0.png)
+
 ## Soal 12
 Melakukan konfigurasi agar proxy server dapat diakses dengan menggunakan domain ```janganlupa-ta.d12.pw```
 
