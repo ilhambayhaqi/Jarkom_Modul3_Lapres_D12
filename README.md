@@ -125,11 +125,19 @@ Perlu diingat, pada konfigurasi ```http_access``` akan mengambil argument dalam 
 ## Soal 10
 Ketika user mencoba untuk mengakses **google.com** maka akan dialihkan menuju **monta.if.its.ac.id**
 
+Untuk melakukan redirect cukup dilakukan dengan membuat access deny pada url yang dituju kemudian diset ```deny_info``` menuju url yang akan dijadikan tempat pengalihannya. Untuk konfigurasi pada file ```/etc/squid/squid.conf``` sebagai berikut.
+
 ## Soal 11
 Mengganti error page default pada squid dengan error page yang telah disediakan.
 
 ## Soal 12
 Melakukan konfigurasi agar proxy server dapat diakses dengan menggunakan domain ```janganlupa-ta.d12.pw```
+
+Untuk menyelesaikan soal ini maka pertama dilakukan instalasi DNS Server dengan Bind9 menggunakan command ```apt-get install bind9 -y```
+
+Kemudian dilakukan konfigurasi zone pada file ```/etc/binid/named.conf.local``` sebagai berikut.
+
+Kemudian untuk melakukan setting domain beserta subdomainnya dilakukan pada file ```/etc/bind/jarkom/janganlupa-ta.d12.pw``` sebagai berikut.
 
 
 
