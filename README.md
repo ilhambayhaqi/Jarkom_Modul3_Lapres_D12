@@ -12,7 +12,7 @@ Untuk menyelesaikan soal ini dibuat topologi.sh dengan setting sebagai berikut.
 ```
 sajs
 ```
-<img src="topologi-sh.jpg">
+![image](https://user-images.githubusercontent.com/57692117/100539930-812d0480-326c-11eb-80e2-8393f5a4a4c9.png)
 
 Untuk konfigurasi setiap UML selain client sebagai berikut.
 <img src="surabaya-interface"/>
