@@ -27,6 +27,7 @@ Untuk konfigurasi file ```etc/network/interfaces``` setiap UML selain client seb
 ![image](https://user-images.githubusercontent.com/57692117/100540558-9a37b480-3270-11eb-8716-18e11cdc4e51.png)
 
 - Pada UML **Mojokerto** sebagai berikut.
+
 ![image](https://user-images.githubusercontent.com/57692117/100540580-b50a2900-3270-11eb-8ec3-c145468cc4e1.png)
 
 - Pada UML **Tuban** sebagai berikut.
